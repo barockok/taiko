@@ -1,0 +1,9 @@
+%div{style: 'display: none'}
+
+  -if content_for?(:prepend_js)
+    =yield :prepend_js
+
+  = javascript_include_tag 'application'
+
+  -if content_for?(:append_js)
+    =yield :append_js

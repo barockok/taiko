@@ -1,0 +1,10 @@
+%head
+  -if content_for?(:prepend_head)
+    =yield :prepend_head
+
+  %title Linkkart
+  = stylesheet_link_tag    'application', media: 'all'
+  = csrf_meta_tags
+
+  -if content_for?(:append_head)
+    =yield :append_head

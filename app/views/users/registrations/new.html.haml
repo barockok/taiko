@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      .row
+        .col-md-10.col-md-offset-1
+          .login-box
+            .login-box-header
+              %h1 Sign Up
+            .login-box-body
+              = simple_form_for(resource, as: resource_name, url: session_path(resource_name) , html: { class: '' }, wrapper: :vertical_form, wrapper_mappings: {boolean: :vertical_boolean}) do |f|
+                =f.input :email
+                =f.input :password
+                =f.input :password_confirmation
+                %hr
+                =f.button :submit, 'Submit'
+
+              = render "users/shared/links"
